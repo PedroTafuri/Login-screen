@@ -1,37 +1,84 @@
-.App {
-  text-align: center;
+body{
+  background-color: #303030;
+  margin: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#active {
+  display: block;
+  margin: 20px auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+#user-data h1 {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0px 0px 20px;
+}
+
+#user-data label {
+  display: block;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+#user-data input {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: .5rem;
+  font-size: 1rem;
+  background-color: #f7f7f7;
+}
+
+#user-data button {
+  margin-top: 20px;
+  display: block;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1rem;
+  padding: .6rem 2rem;
+  border: none;
+  background-color: rgb(30, 101, 143);
+  border-radius: 5px;
+  color: rgb(7, 27, 39);
+}
+
+#user-data {
+  padding: 30px;
+  background-color: white;
+  border-radius: 5px;
+  /* box-shadow: 0 1px 1px rbga(0,0,0, .1); */
+  max-width: 400px;
+  margin: 20px auto;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+#user-data.animationON {
+  animation-name: move;
+  animation-duration: .3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-play-state: running;
+}
+
+@keyframes move {
+  to {
+    transform: translateY(-50px);
+    opacity: 1;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#load {
+  width: 20px;
+  height: 20px;
+  border: 10px solid;
+  border-radius: 50%;
+  border-top-color: transparent;
+  margin: 0 auto;
+  color: rgb(30, 101, 143);
+  animation: load .5s linear infinite;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+@keyframes load {
   to {
     transform: rotate(360deg);
   }
